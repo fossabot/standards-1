@@ -1,13 +1,15 @@
 import json
 from copy import deepcopy
-from owlready2 import *
+from owlready2 import owl_world, get_ontology
 from models import RDFClass, RDFProperty
 from export_templates import get_definition_pot, get_base_identity_pot, get_vocabulary_pot, POT_EXPORT
 from utils import owl_property_to_python_for_definition, owl_property_context, class_get_full_id,\
     owl_property_to_python_for_vocabulary
 from class_helpers import Link, Identity
+from collections import OrderedDict
+import os, sys
 
-pot = owl_world.get_ontology("https://standard.oftrust.net/")
+pot = owl_world.get_ontology("https://standards.lifeengine.io/")
 
 
 def create_definition_from_rdf_class(rdf_class, context, onto, pot_export, template):
@@ -65,6 +67,7 @@ def create_identity_from_rdf_class(rdf_class, context, onto, pot_export, templat
 
     for rdf_attribute in total_attributes:
         identity_dict[rdf_attribute.name] = owl_property_context(rdf_attribute)
+
     return {
         '@context': identity_dict
     }
