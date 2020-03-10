@@ -2,11 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
-            "@prefix": true
-        },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -43,24 +39,28 @@
             ]
         }
     },
-    "PublishedOn": {
-        "@id": "dli:PublishedOn",
-        "@type": "dli:Class",
-        "subClassOf": "dli:Link",
-        "vs:term_status": "unstable",
-        "owl:versionInfo": "DRAFT",
+    "productCode": {
+        "@id": "pot:productCode",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Published",
-            "fi-fi": "Julkaistu"
+            "en-us": "Product code",
+            "fi-fi": "Tuotekoodi"
         },
         "rdfs:comment": {
-            "en-us": "Shows the link in which a digital thing is published",
-            "fi-fi": "Osoittaa linkin jossa digitaalinen asia on julkaistu"
-        }
+            "en-us": "Unique identifier of a product"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:PublishedOn"
+        ]
     },
     "updatedBy": {
-        "@id": "dli:updatedBy",
-        "@type": "rdf:Property",
+        "@id": "pot:updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "en-us": "Updater",
             "fi-fi": "Identieetin päivittäjä"
@@ -68,56 +68,54 @@
         "rdfs:comment": {
             "en-us": "Updater of an identity "
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "productCode": {
-        "@id": "dli:productCode",
-        "@type": "rdf:Property",
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Tuotekoodi",
-            "en-us": "Product code"
+            "en-us": "Data"
         },
         "rdfs:comment": {
-            "en-us": "Unique identifier of a product"
+            "en-us": "Data container"
         },
-        "domain": [
-            "dli:PublishedOn"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "to": {
-        "@id": "dli:to",
-        "@type": "rdf:Property",
+    "updatedAt": {
+        "@id": "pot:updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Identity to"
+            "fi-fi": "Päivitysaika",
+            "en-us": "Update time"
         },
         "rdfs:comment": {
-            "en-us": "Entity which is linked"
+            "en-us": "Time when the data is updated"
         },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
         "domain": [
-            "dli:Link"
-        ],
-        "range": [
-            "dli:Class"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+            "pot:Link"
+        ]
     },
     "createdBy": {
-        "@id": "dli:createdBy",
-        "@type": "rdf:Property",
+        "@id": "pot:createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "fi-fi": "Identiteetin luoja",
             "en-us": "Creator"
@@ -125,110 +123,62 @@
         "rdfs:comment": {
             "en-us": "Creator of and identity "
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
     "metadata": {
-        "@id": "dli:metadata",
-        "@type": "rdf:Property",
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "en-us": "Metadata"
         },
         "rdfs:comment": {
             "en-us": "Metadata container"
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "updatedAt": {
-        "@id": "dli:updatedAt",
-        "@type": "rdf:Property",
-        "rdfs:label": {
-            "en-us": "Update time",
-            "fi-fi": "Päivitysaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is updated"
-        },
         "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
-            "xsd:dateTime"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
     "createdAt": {
-        "@id": "dli:createdAt",
-        "@type": "rdf:Property",
+        "@id": "pot:createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
+            "fi-fi": "Luomisaika",
+            "en-us": "Creation time"
         },
         "rdfs:comment": {
             "en-us": "Time when the data is created"
         },
-        "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:dateTime"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "from": {
-        "@id": "dli:from",
-        "@type": "rdf:Property",
+    "PublishedOn": {
+        "@id": "pot:Link/PublishedOn",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Link",
         "rdfs:label": {
-            "en-us": "Identity from"
+            "fi-fi": "Julkaistu",
+            "en-us": "Published"
         },
         "rdfs:comment": {
-            "en-us": "Entity which is linked"
-        },
-        "domain": [
-            "dli:Link"
-        ],
-        "range": [
-            "dli:Class"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "data": {
-        "@id": "dli:data",
-        "@type": "rdf:Property",
-        "rdfs:label": {
-            "en-us": "Data"
-        },
-        "rdfs:comment": {
-            "en-us": "Data container"
-        },
-        "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+            "fi-fi": "Osoittaa linkin jossa digitaalinen asia on julkaistu",
+            "en-us": "Shows the link in which a digital thing is published"
+        }
     }
 }

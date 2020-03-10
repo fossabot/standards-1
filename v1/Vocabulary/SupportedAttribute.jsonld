@@ -2,11 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
-            "@prefix": true
-        },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -43,16 +39,18 @@
             ]
         }
     },
-    "SupportedAttribute": {
-        "@id": "dli:SupportedAttribute",
-        "@type": "dli:Class",
-        "vs:term_status": "unstable",
-        "owl:versionInfo": "DRAFT",
+    "supportedAttribute": {
+        "@id": "pot:supportedAttribute",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Tuettu attribuutti"
+            "fi-fi": "Tuetut attribuutit"
         },
         "rdfs:comment": {
-            "en-us": "Attribuutti jonka tiedetään kuuluvan identiteettiin"
-        }
+            "fi-fi": "Attribuutit jotka tiedetään liittyvän identiteettiin"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ]
     }
 }

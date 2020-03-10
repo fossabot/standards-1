@@ -2,11 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
-            "@prefix": true
-        },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -43,24 +39,10 @@
             ]
         }
     },
-    "System": {
-        "@id": "dli:System",
-        "@type": "dli:Class",
-        "subClassOf": "dli:HumanWorld",
-        "vs:term_status": "unstable",
-        "owl:versionInfo": "DRAFT",
-        "rdfs:label": {
-            "en-us": "System",
-            "fi-fi": "Järjestelmä"
-        },
-        "rdfs:comment": {
-            "en-us": "Any physical system built with components from national grid to sewage lines and art installations",
-            "fi-fi": "Fyysinen järjestelmä joka koostuu useammasta komponentista runkoverkoista, talon viemäriin tai taideinstallaatioon"
-        }
-    },
     "updatedBy": {
-        "@id": "dli:updatedBy",
-        "@type": "rdf:Property",
+        "@id": "pot:updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "en-us": "Updater",
             "fi-fi": "Identieetin päivittäjä"
@@ -68,41 +50,36 @@
         "rdfs:comment": {
             "en-us": "Updater of an identity "
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "name": {
-        "@id": "dli:name",
-        "@type": "rdf:Property",
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Identiteetin nimi",
-            "en-us": "Identity name"
+            "en-us": "Data"
         },
         "rdfs:comment": {
-            "en-us": "Name given to the Identity"
+            "en-us": "Data container"
         },
-        "domain": [
-            "dli:Person",
-            "dli:Identity",
-            "dli:DataProduct",
-            "dli:App"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
     "createdBy": {
-        "@id": "dli:createdBy",
-        "@type": "rdf:Property",
+        "@id": "pot:createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "fi-fi": "Identiteetin luoja",
             "en-us": "Creator"
@@ -110,97 +87,88 @@
         "rdfs:comment": {
             "en-us": "Creator of and identity "
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "name": {
+        "@id": "pot:name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Identiteetin nimi",
+            "en-us": "Name"
+        },
+        "rdfs:comment": {
+            "en-us": "Name given to the Identity"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:App",
+            "pot:DataProduct",
+            "pot:Identity",
+            "pot:Person"
+        ]
     },
     "metadata": {
-        "@id": "dli:metadata",
-        "@type": "rdf:Property",
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "en-us": "Metadata"
         },
         "rdfs:comment": {
             "en-us": "Metadata container"
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "updatedAt": {
-        "@id": "dli:updatedAt",
-        "@type": "rdf:Property",
-        "rdfs:label": {
-            "en-us": "Update time",
-            "fi-fi": "Päivitysaika"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is updated"
-        },
         "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
-            "xsd:dateTime"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
     "createdAt": {
-        "@id": "dli:createdAt",
-        "@type": "rdf:Property",
+        "@id": "pot:createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Creation time",
-            "fi-fi": "Luomisaika"
+            "fi-fi": "Luomisaika",
+            "en-us": "Creation time"
         },
         "rdfs:comment": {
             "en-us": "Time when the data is created"
         },
-        "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:dateTime"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "data": {
-        "@id": "dli:data",
-        "@type": "rdf:Property",
+    "System": {
+        "@id": "pot:Identity/Thing/HumanWorld/System",
+        "@type": "owl:Class",
+        "subClassOf": "pot:HumanWorld",
         "rdfs:label": {
-            "en-us": "Data"
+            "fi-fi": "Järjestelmä",
+            "en-us": "System"
         },
         "rdfs:comment": {
-            "en-us": "Data container"
-        },
-        "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+            "en-us": "Any physical system built with components from national grid to sewage lines and art installations",
+            "fi-fi": "Fyysinen järjestelmä joka koostuu useammasta komponentista runkoverkoista, talon viemäriin tai taideinstallaatioon"
+        }
     },
     "BuiltEnvironment": {
         "rdfs:subClassOf": {
-            "@id": "dli:Identity/Thing/HumanWorld/System"
+            "@id": "pot:Identity/Thing/HumanWorld/System"
         }
     }
 }

@@ -2,11 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
-            "@prefix": true
-        },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -44,18 +40,15 @@
         }
     },
     "Class": {
-        "@id": "dli:Class",
-        "@type": "dli:Class",
-        "subClassOf": "rdfs:Class",
-        "vs:term_status": "unstable",
-        "owl:versionInfo": "DRAFT",
+        "@id": "pot:Class",
+        "@type": "owl:Class",
         "rdfs:label": {
             "en-us": "Digital Living Class",
             "fi-fi": "Digital Living luokka"
         },
         "rdfs:comment": {
-            "en-us": "The class of Digital Living classes. Digital Living classes and their instances",
-            "fi-fi": "Digital Living perusluokka"
+            "fi-fi": "Digital Living perusluokka",
+            "en-us": "The class of Digital Living classes. Digital Living classes and their instances"
         }
     }
 }
