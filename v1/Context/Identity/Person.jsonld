@@ -1,10 +1,10 @@
 {
     "@context": {
         "@version": 1.1,
-        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Identity/Person",
-        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Identity/Person",
+        "@vocab": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/Identity/Person",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/v1/ClassDefinitions/Identity/Person",
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "data": {
@@ -13,6 +13,14 @@
         },
         "metadata": {
             "@id": "pot:metadata"
+        },
+        "firstName": {
+            "@id": "pot:firstName",
+            "@nest": "data"
+        },
+        "name": {
+            "@id": "pot:name",
+            "@nest": "data"
         },
         "createdBy": {
             "@id": "pot:createdBy",
@@ -26,16 +34,8 @@
             "@id": "pot:createdAt",
             "@nest": "metadata"
         },
-        "name": {
-            "@id": "pot:name",
-            "@nest": "data"
-        },
         "lastName": {
             "@id": "pot:lastName",
-            "@nest": "data"
-        },
-        "firstName": {
-            "@id": "pot:firstName",
             "@nest": "data"
         }
     }

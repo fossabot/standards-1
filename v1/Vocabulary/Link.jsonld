@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -39,6 +39,42 @@
             ]
         }
     },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Data"
+        },
+        "rdfs:comment": {
+            "en-us": "Data container"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Päivitysaika",
+            "en-us": "Update time"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is updated"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Link"
+        ]
+    },
     "createdBy": {
         "@id": "pot:createdBy",
         "@type": "owl:DatatypeProperty",
@@ -49,24 +85,6 @@
         },
         "rdfs:comment": {
             "en-us": "Creator of and identity "
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "data": {
-        "@id": "pot:data",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Data"
-        },
-        "rdfs:comment": {
-            "en-us": "Data container"
         },
         "pot:valueType": [
             "xsd:string"
@@ -129,24 +147,6 @@
         ],
         "domain": [
             "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Päivitysaika",
-            "en-us": "Update time"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is updated"
-        },
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
-        "domain": [
             "pot:Link"
         ]
     },
