@@ -2,11 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
-            "@prefix": true
-        },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -43,125 +39,68 @@
             ]
         }
     },
-    "HumanWorld": {
-        "@id": "dli:HumanWorld",
-        "@type": "dli:Class",
-        "subClassOf": "dli:Thing",
-        "vs:term_status": "unstable",
-        "owl:versionInfo": "DRAFT",
-        "rdfs:label": {
-            "en-us": "Human made world",
-            "fi-fi": "Ihmisen tekemä maailma"
-        },
-        "rdfs:comment": {
-            "en-us": "Nature made things from geology to water, natural resources and climate - the planet",
-            "fi-fi": "Luonnon muodostama ympäristö geologiasta, vedestä luonnon resusseihin ja ilmastoon - planeetta itse"
-        }
-    },
-    "updatedBy": {
-        "@id": "dli:updatedBy",
-        "@type": "rdf:Property",
-        "rdfs:label": {
-            "en-us": "Updater",
-            "fi-fi": "Identieetin päivittäjä"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity "
-        },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
-    "name": {
-        "@id": "dli:name",
-        "@type": "rdf:Property",
-        "rdfs:label": {
-            "fi-fi": "Identiteetin nimi",
-            "en-us": "Identity name"
-        },
-        "rdfs:comment": {
-            "en-us": "Name given to the Identity"
-        },
-        "domain": [
-            "dli:Person",
-            "dli:Identity",
-            "dli:DataProduct",
-            "dli:App"
-        ],
-        "range": [
-            "xsd:string"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
-    },
     "createdBy": {
-        "@id": "dli:createdBy",
-        "@type": "rdf:Property",
+        "@id": "pot:createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Identiteetin luoja",
-            "en-us": "Creator"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
             "en-us": "Creator of and identity "
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
     "metadata": {
-        "@id": "dli:metadata",
-        "@type": "rdf:Property",
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "en-us": "Metadata"
         },
         "rdfs:comment": {
             "en-us": "Metadata container"
         },
-        "domain": [
-            "dli:Identity",
-            "dli:Link"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "updatedAt": {
-        "@id": "dli:updatedAt",
-        "@type": "rdf:Property",
+    "name": {
+        "@id": "pot:name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Update time",
-            "fi-fi": "Päivitysaika"
+            "fi-fi": "Nimi",
+            "en-us": "Name"
         },
         "rdfs:comment": {
-            "en-us": "Time when the data is updated"
+            "en-us": "Name of the data product"
         },
+        "pot:valueType": [
+            "xsd:string"
+        ],
         "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
-            "xsd:dateTime"
-        ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+            "pot:Identity",
+            "pot:Person",
+            "pot:App",
+            "pot:DataProduct"
+        ]
     },
     "createdAt": {
-        "@id": "dli:createdAt",
-        "@type": "rdf:Property",
+        "@id": "pot:createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "en-us": "Creation time",
             "fi-fi": "Luomisaika"
@@ -169,43 +108,72 @@
         "rdfs:comment": {
             "en-us": "Time when the data is created"
         },
-        "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:dateTime"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity "
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
     "data": {
-        "@id": "dli:data",
-        "@type": "rdf:Property",
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
             "en-us": "Data"
         },
         "rdfs:comment": {
             "en-us": "Data container"
         },
-        "domain": [
-            "dli:Link",
-            "dli:Identity"
-        ],
-        "range": [
+        "pot:valueType": [
             "xsd:string"
         ],
-        "owl:versionInfo": "DRAFT",
-        "vs:term_status": "unstable"
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
     },
-    "System": {
-        "rdfs:subClassOf": {
-            "@id": "dli:Identity/Thing/HumanWorld"
+    "HumanWorld": {
+        "@id": "pot:Identity/Thing/HumanWorld",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Thing",
+        "rdfs:label": {
+            "en-us": "Human made world",
+            "fi-fi": "Ihmisen tekemä maailma"
+        },
+        "rdfs:comment": {
+            "fi-fi": "Luonnon muodostama ympäristö geologiasta, vedestä luonnon resusseihin ja ilmastoon - planeetta itse",
+            "en-us": "Nature made things from geology to water, natural resources and climate - the planet"
         }
     },
     "Product": {
         "rdfs:subClassOf": {
-            "@id": "dli:Identity/Thing/HumanWorld"
+            "@id": "pot:Identity/Thing/HumanWorld"
+        }
+    },
+    "System": {
+        "rdfs:subClassOf": {
+            "@id": "pot:Identity/Thing/HumanWorld"
         }
     }
 }

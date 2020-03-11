@@ -5,16 +5,12 @@
             "@id": "http://www.w3.org/2001/XMLSchema#",
             "@prefix": true
         },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
-            "@prefix": true
-        },
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "description": {
-            "@id": "dli:description",
+            "@id": "rdfs:comment",
             "@container": [
                 "@language",
                 "@set"
@@ -27,129 +23,127 @@
                 "@set"
             ]
         },
-        "@vocab": "https://standards.lifeengine.io/v1/Vocabulary/Identity/Virtual/Restriction"
-    },
-    "@id": "https://standards.lifeengine.io/v1/Vocabulary/Identity/Virtual/Restriction",
-    "dli:supportedClass": {
-        "@id": "dli:Identity/Virtual/Restriction",
-        "@type": "dli:Class",
-        "subClassOf": "dli:Identity/Virtual",
-        "rdfs:label": {
-            "en-us": "Restriction",
-            "fi-fi": "Rajoitus"
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
         },
-        "dli:supportedAttribute": {
-            "data": {
-                "@id": "dli:data",
-                "@type": "dli:SupportedAttribute",
-                "dli:title": "Data",
-                "dli:required": true,
-                "dli:readonly": false,
-                "dli:description": {
-                    "en-us": "Data container"
-                },
-                "dli:valueType": [
-                    "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:object"
-                }
-            },
+        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Identity/Virtual/Restriction"
+    },
+    "pot:supportedClass": {
+        "@id": "pot:Identity/Virtual/Restriction",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Virtual",
+        "rdfs:label": {
+            "fi-fi": "Rajoitus",
+            "en-us": "Restriction"
+        },
+        "rdfs:comment": {
+            "en-us": "Financial accounting or legal restriction e.g. a pledge or guardian ship ",
+            "fi-fi": "Kirjanpidollinen tai lakimääräinen rajoitus kuten pantti tai edunvalvonta"
+        },
+        "pot:supportedAttribute": {
             "createdAt": {
-                "@id": "dli:createdAt",
-                "@type": "dli:SupportedAttribute",
-                "dli:title": "Creation time",
-                "dli:required": false,
-                "dli:readonly": true,
-                "dli:description": {
+                "@id": "pot:createdAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Creation time",
+                    "fi-fi": "Luomisaika"
+                },
+                "rdfs:comment": {
                     "en-us": "Time when the data is created"
                 },
-                "dli:valueType": [
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
                     "xsd:dateTime"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:dateTime"
-                }
+                ]
             },
             "createdBy": {
-                "@id": "dli:createdBy",
-                "@type": "dli:SupportedAttribute",
-                "dli:title": "Creator",
-                "dli:required": false,
-                "dli:readonly": true,
-                "dli:description": {
+                "@id": "pot:createdBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Creator",
+                    "fi-fi": "Identiteetin luoja"
+                },
+                "rdfs:comment": {
                     "en-us": "Creator of and identity "
                 },
-                "dli:valueType": [
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
                     "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string"
-                }
+                ]
+            },
+            "data": {
+                "@id": "pot:data",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Data"
+                },
+                "rdfs:comment": {
+                    "en-us": "Data container"
+                },
+                "pot:required": true,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
             },
             "metadata": {
-                "@id": "dli:metadata",
-                "@type": "dli:SupportedAttribute",
-                "dli:title": "Metadata",
-                "dli:required": false,
-                "dli:readonly": true,
-                "dli:description": {
+                "@id": "pot:metadata",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Metadata"
+                },
+                "rdfs:comment": {
                     "en-us": "Metadata container"
                 },
-                "dli:valueType": [
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
                     "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:object"
-                }
+                ]
             },
             "name": {
-                "@id": "dli:name",
-                "@type": "dli:SupportedAttribute",
-                "dli:title": "Identity name",
-                "dli:required": true,
-                "dli:readonly": false,
-                "dli:description": {
-                    "en-us": "Name given to the Identity"
+                "@id": "pot:name",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "fi-fi": "Nimi",
+                    "en-us": "Name"
                 },
-                "dli:valueType": [
+                "rdfs:comment": {
+                    "en-us": "Name of the data product"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
                     "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string"
-                }
-            },
-            "updatedAt": {
-                "@id": "dli:updatedAt",
-                "@type": "dli:SupportedAttribute",
-                "dli:title": "Update time",
-                "dli:required": false,
-                "dli:readonly": true,
-                "dli:description": {
-                    "en-us": "Time when the data is updated"
-                },
-                "dli:valueType": [
-                    "xsd:dateTime"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:dateTime"
-                }
+                ]
             },
             "updatedBy": {
-                "@id": "dli:updatedBy",
-                "@type": "dli:SupportedAttribute",
-                "dli:title": "Updater",
-                "dli:required": false,
-                "dli:readonly": true,
-                "dli:description": {
+                "@id": "pot:updatedBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "fi-fi": "Identieetin päivittäjä",
+                    "en-us": "Updater"
+                },
+                "rdfs:comment": {
                     "en-us": "Updater of an identity "
                 },
-                "dli:valueType": [
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
                     "xsd:string"
-                ],
-                "xsd:restriction": {
-                    "xsd:base": "xsd:string"
-                }
+                ]
             }
         }
     }

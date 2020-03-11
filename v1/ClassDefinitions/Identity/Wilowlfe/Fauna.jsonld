@@ -1,0 +1,150 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "xsd": {
+            "@id": "http://www.w3.org/2001/XMLSchema#",
+            "@prefix": true
+        },
+        "pot": {
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@prefix": true
+        },
+        "description": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "label": {
+            "@id": "rdfs:label",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "comment": {
+            "@id": "rdfs:comment",
+            "@container": [
+                "@language",
+                "@set"
+            ]
+        },
+        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Identity/Wilowlfe/Fauna"
+    },
+    "pot:supportedClass": {
+        "@id": "pot:Identity/Wilowlfe/Fauna",
+        "@type": "owl:Class",
+        "subClassOf": "pot:Wilowlfe",
+        "rdfs:label": {
+            "fi-fi": "Eläimet",
+            "en-us": "Fauna"
+        },
+        "rdfs:comment": {
+            "en-us": "Animal life from plankton to mammals and dinosaurs",
+            "fi-fi": "Eläimistö, systemaattinen esitys jonkin alueen eläinlajeista nilviäisistä, nisäkkäisiin ja dinosauruksiin."
+        },
+        "pot:supportedAttribute": {
+            "createdAt": {
+                "@id": "pot:createdAt",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Creation time",
+                    "fi-fi": "Luomisaika"
+                },
+                "rdfs:comment": {
+                    "en-us": "Time when the data is created"
+                },
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
+                    "xsd:dateTime"
+                ]
+            },
+            "createdBy": {
+                "@id": "pot:createdBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Creator",
+                    "fi-fi": "Identiteetin luoja"
+                },
+                "rdfs:comment": {
+                    "en-us": "Creator of and identity "
+                },
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "data": {
+                "@id": "pot:data",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Data"
+                },
+                "rdfs:comment": {
+                    "en-us": "Data container"
+                },
+                "pot:required": true,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "metadata": {
+                "@id": "pot:metadata",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "en-us": "Metadata"
+                },
+                "rdfs:comment": {
+                    "en-us": "Metadata container"
+                },
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "name": {
+                "@id": "pot:name",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "fi-fi": "Nimi",
+                    "en-us": "Name"
+                },
+                "rdfs:comment": {
+                    "en-us": "Name of the data product"
+                },
+                "pot:required": false,
+                "pot:readonly": false,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            },
+            "updatedBy": {
+                "@id": "pot:updatedBy",
+                "@type": "owl:DatatypeProperty",
+                "subPropertyOf": "pot:topDataProperty",
+                "rdfs:label": {
+                    "fi-fi": "Identieetin päivittäjä",
+                    "en-us": "Updater"
+                },
+                "rdfs:comment": {
+                    "en-us": "Updater of an identity "
+                },
+                "pot:required": false,
+                "pot:readonly": true,
+                "pot:valueType": [
+                    "xsd:string"
+                ]
+            }
+        }
+    }
+}

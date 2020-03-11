@@ -1,57 +1,50 @@
 {
     "@context": {
         "@version": 1.1,
-        "@vocab": "https://standards.lifeengine.io/v1/Vocabulary/Identity/Digital/Software/App",
-        "@classDefinition": "https://standards.lifeengine.io/v1/ClassDefinitions/Identity/Digital/Software/App",
+        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Identity/Digital/Software/App",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Identity/Digital/Software/App",
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
-            "@prefix": true
-        },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "data": {
-            "@id": "dli:data"
+            "@id": "pot:data",
+            "@nest": "data"
         },
         "metadata": {
-            "@id": "dli:metadata"
-        },
-        "privacyPolicyUrl": {
-            "@id": "dli:privacyPolicyUrl",
-            "@nest": "data"
-        },
-        "updatedBy": {
-            "@id": "dli:updatedBy",
-            "@nest": "metadata"
-        },
-        "name": {
-            "@id": "dli:name",
-            "@nest": "data"
-        },
-        "createdBy": {
-            "@id": "dli:createdBy",
-            "@nest": "metadata"
-        },
-        "updatedAt": {
-            "@id": "dli:updatedAt",
-            "@nest": "metadata"
-        },
-        "createdAt": {
-            "@id": "dli:createdAt",
-            "@nest": "metadata"
+            "@id": "pot:metadata"
         },
         "description": {
-            "@id": "dli:description",
+            "@id": "pot:description",
             "@nest": "data"
         },
         "iconUrl": {
-            "@id": "dli:iconUrl",
+            "@id": "pot:iconUrl",
+            "@nest": "data"
+        },
+        "createdBy": {
+            "@id": "pot:createdBy",
+            "@nest": "metadata"
+        },
+        "privacyPolicyUrl": {
+            "@id": "pot:privacyPolicyUrl",
+            "@nest": "data"
+        },
+        "createdAt": {
+            "@id": "pot:createdAt",
+            "@nest": "metadata"
+        },
+        "name": {
+            "@id": "pot:name",
             "@nest": "data"
         },
         "webpageUrl": {
-            "@id": "dli:webpageUrl",
+            "@id": "pot:webpageUrl",
             "@nest": "data"
+        },
+        "updatedBy": {
+            "@id": "pot:updatedBy",
+            "@nest": "metadata"
         }
     }
 }

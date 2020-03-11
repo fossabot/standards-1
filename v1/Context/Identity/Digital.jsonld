@@ -1,40 +1,33 @@
 {
     "@context": {
         "@version": 1.1,
-        "@vocab": "https://standards.lifeengine.io/v1/Vocabulary/Identity/Digital",
-        "@classDefinition": "https://standards.lifeengine.io/v1/ClassDefinitions/Identity/Digital",
+        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Identity/Digital",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Identity/Digital",
         "pot": {
-            "@id": "https://standards.oftrust.net/v1/Vocabulary/",
-            "@prefix": true
-        },
-        "dli": {
-            "@id": "https://standards.lifeengine.io/v1/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
             "@prefix": true
         },
         "data": {
-            "@id": "dli:data"
+            "@id": "pot:data",
+            "@nest": "data"
         },
         "metadata": {
-            "@id": "dli:metadata"
+            "@id": "pot:metadata"
         },
-        "updatedBy": {
-            "@id": "dli:updatedBy",
+        "createdBy": {
+            "@id": "pot:createdBy",
             "@nest": "metadata"
         },
         "name": {
-            "@id": "dli:name",
+            "@id": "pot:name",
             "@nest": "data"
         },
-        "createdBy": {
-            "@id": "dli:createdBy",
-            "@nest": "metadata"
-        },
-        "updatedAt": {
-            "@id": "dli:updatedAt",
-            "@nest": "metadata"
-        },
         "createdAt": {
-            "@id": "dli:createdAt",
+            "@id": "pot:createdAt",
+            "@nest": "metadata"
+        },
+        "updatedBy": {
+            "@id": "pot:updatedBy",
             "@nest": "metadata"
         }
     }
