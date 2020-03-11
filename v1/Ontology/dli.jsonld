@@ -139,7 +139,30 @@
   } ]
 }, {
   "@id" : "https://standards.lifeengine.io/v1/Vocabulary/Identity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en-us",
+    "@value" : "Digital Living core identities"
+  }, {
+    "@language" : "fi-fi",
+    "@value" : "Digital Livingin Identiteetti"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://standards.lifeengine.io/v1/Vocabulary/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "fi-fi",
+    "@value" : "Digital Living Identiteetti"
+  }, {
+    "@language" : "en-us",
+    "@value" : "Digital Living Identity"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "DRAFT"
+  } ],
+  "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status" : [ {
+    "@value" : "unstable"
+  } ]
 }, {
   "@id" : "https://standards.lifeengine.io/v1/Vocabulary/Identity/Digital",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
