@@ -4068,7 +4068,7 @@
     
 
 
-    <!-- https://standards.oftrust.net/v1/Vocabulary/Identity/Equipment/Device/SensorCarbonDioxideSensor -->
+    <!-- https://standards.oftrust.net/v1/Vocabulary/Identity/Equipment/Device/Sensor/CarbonDioxideSensor -->
 
     <owl:Class rdf:about="https://standards.oftrust.net/v1/Vocabulary/Identity/Equipment/Device/SensorCarbonDioxideSensor">
         <rdfs:subClassOf rdf:resource="https://standards.oftrust.net/v1/Vocabulary/Identity/Equipment/Device/Sensor"/>
