@@ -1,0 +1,34 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Link/Role/DeveloperAt",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Link/Role/DeveloperAt",
+        "pot": {
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@prefix": true
+        },
+        "data": {
+            "@id": "pot:data",
+            "@nest": "data"
+        },
+        "metadata": {
+            "@id": "pot:metadata"
+        },
+        "createdBy": {
+            "@id": "pot:createdBy",
+            "@nest": "metadata"
+        },
+        "createdAt": {
+            "@id": "pot:createdAt",
+            "@nest": "metadata"
+        },
+        "updatedBy": {
+            "@id": "pot:updatedBy",
+            "@nest": "metadata"
+        },
+        "updatedAt": {
+            "@id": "pot:updatedAt",
+            "@nest": "metadata"
+        }
+    }
+}

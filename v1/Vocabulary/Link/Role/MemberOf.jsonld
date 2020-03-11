@@ -39,16 +39,16 @@
             ]
         }
     },
-    "updatedBy": {
-        "@id": "pot:updatedBy",
+    "createdBy": {
+        "@id": "pot:createdBy",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Updater",
-            "fi-fi": "Identieetin päivittäjä"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
-            "en-us": "Updater of an identity "
+            "en-us": "Creator of and identity "
         },
         "pot:valueType": [
             "xsd:string"
@@ -67,43 +67,6 @@
         },
         "rdfs:comment": {
             "en-us": "Data container"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "updatedAt": {
-        "@id": "pot:updatedAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Päivitysaika",
-            "en-us": "Update time"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is updated"
-        },
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
-        "domain": [
-            "pot:Link"
-        ]
-    },
-    "createdBy": {
-        "@id": "pot:createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Identiteetin luoja",
-            "en-us": "Creator"
-        },
-        "rdfs:comment": {
-            "en-us": "Creator of and identity "
         },
         "pot:valueType": [
             "xsd:string"
@@ -136,8 +99,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Luomisaika",
-            "en-us": "Creation time"
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
         },
         "rdfs:comment": {
             "en-us": "Time when the data is created"
@@ -147,6 +110,43 @@
         ],
         "domain": [
             "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity "
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedAt": {
+        "@id": "pot:updatedAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Päivitysaika",
+            "en-us": "Update time"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is updated"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
             "pot:Link"
         ]
     },

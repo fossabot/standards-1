@@ -44,8 +44,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Updater",
-            "fi-fi": "Identieetin päivittäjä"
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
         },
         "rdfs:comment": {
             "en-us": "Updater of an identity "

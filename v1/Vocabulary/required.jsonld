@@ -41,10 +41,6 @@
     },
     "required": {
         "@id": "pot:required",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "pot:valueType": [
-            "xsd:boolean"
-        ]
+        "@type": "owl:AnnotationProperty"
     }
 }

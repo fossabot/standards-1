@@ -44,8 +44,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Tietousojaselosteen URL",
-            "en-us": "Privacy policy URL"
+            "en-us": "Privacy policy URL",
+            "fi-fi": "Tietousojaselosteen URL"
         },
         "rdfs:comment": {
             "en-us": "Privacy policy URL of an app"

@@ -44,20 +44,20 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Identiteetin nimi",
+            "fi-fi": "Nimi",
             "en-us": "Name"
         },
         "rdfs:comment": {
-            "en-us": "Name given to the Identity"
+            "en-us": "Name of the data product"
         },
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
-            "pot:App",
-            "pot:DataProduct",
             "pot:Identity",
-            "pot:Person"
+            "pot:Person",
+            "pot:App",
+            "pot:DataProduct"
         ]
     }
 }

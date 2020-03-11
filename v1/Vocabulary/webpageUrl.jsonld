@@ -44,8 +44,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Websivun URL",
-            "en-us": "Webpage URL"
+            "en-us": "Webpage URL",
+            "fi-fi": "Websivun URL"
         },
         "rdfs:comment": {
             "en-us": "Webpage URL of an app"
