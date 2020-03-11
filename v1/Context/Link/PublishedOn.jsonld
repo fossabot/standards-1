@@ -1,0 +1,38 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Link/PublishedOn",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Link/PublishedOn",
+        "pot": {
+            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@prefix": true
+        },
+        "data": {
+            "@id": "pot:data",
+            "@nest": "data"
+        },
+        "metadata": {
+            "@id": "pot:metadata"
+        },
+        "updatedAt": {
+            "@id": "pot:updatedAt",
+            "@nest": "metadata"
+        },
+        "createdBy": {
+            "@id": "pot:createdBy",
+            "@nest": "metadata"
+        },
+        "productCode": {
+            "@id": "pot:productCode",
+            "@nest": "data"
+        },
+        "createdAt": {
+            "@id": "pot:createdAt",
+            "@nest": "metadata"
+        },
+        "updatedBy": {
+            "@id": "pot:updatedBy",
+            "@nest": "metadata"
+        }
+    }
+}
