@@ -6,7 +6,7 @@
             "@prefix": true
         },
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "description": {
@@ -30,7 +30,7 @@
                 "@set"
             ]
         },
-        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Link/PublishedOn"
+        "@vocab": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/Link/PublishedOn"
     },
     "pot:supportedClass": {
         "@id": "pot:Link/PublishedOn",

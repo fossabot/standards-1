@@ -1,10 +1,10 @@
 {
     "@context": {
         "@version": 1.1,
-        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Identity/Virtual/Restriction",
-        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Identity/Virtual/Restriction",
+        "@vocab": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/Identity/Virtual/Restriction",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/v1/ClassDefinitions/Identity/Virtual/Restriction",
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "data": {
@@ -14,6 +14,10 @@
         "metadata": {
             "@id": "pot:metadata"
         },
+        "createdAt": {
+            "@id": "pot:createdAt",
+            "@nest": "metadata"
+        },
         "createdBy": {
             "@id": "pot:createdBy",
             "@nest": "metadata"
@@ -21,10 +25,6 @@
         "name": {
             "@id": "pot:name",
             "@nest": "data"
-        },
-        "createdAt": {
-            "@id": "pot:createdAt",
-            "@nest": "metadata"
         },
         "updatedBy": {
             "@id": "pot:updatedBy",

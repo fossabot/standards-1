@@ -6,7 +6,7 @@
             "@prefix": true
         },
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "description": {
@@ -30,7 +30,7 @@
                 "@set"
             ]
         },
-        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Link/Role/DeveloperOf"
+        "@vocab": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/Link/Role/DeveloperOf"
     },
     "pot:supportedClass": {
         "@id": "pot:Link/Role/DeveloperOf",

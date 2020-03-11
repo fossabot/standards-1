@@ -1,10 +1,10 @@
 {
     "@context": {
         "@version": 1.1,
-        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Link/Role/MemberOf",
-        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Link/Role/MemberOf",
+        "@vocab": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/Link/Role/MemberOf",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/v1/ClassDefinitions/Link/Role/MemberOf",
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "data": {
@@ -13,6 +13,10 @@
         },
         "metadata": {
             "@id": "pot:metadata"
+        },
+        "updatedAt": {
+            "@id": "pot:updatedAt",
+            "@nest": "metadata"
         },
         "createdBy": {
             "@id": "pot:createdBy",
@@ -24,10 +28,6 @@
         },
         "updatedBy": {
             "@id": "pot:updatedBy",
-            "@nest": "metadata"
-        },
-        "updatedAt": {
-            "@id": "pot:updatedAt",
             "@nest": "metadata"
         }
     }

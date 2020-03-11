@@ -1,10 +1,10 @@
 {
     "@context": {
         "@version": 1.1,
-        "@vocab": "https://standards-ontotest.lifeengine.io/Vocabulary/Link/PublishedOn",
-        "@classDefinition": "https://standards-ontotest.lifeengine.io/ClassDefinitions/Link/PublishedOn",
+        "@vocab": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/Link/PublishedOn",
+        "@classDefinition": "https://standards-ontotest.lifeengine.io/v1/ClassDefinitions/Link/PublishedOn",
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "data": {
