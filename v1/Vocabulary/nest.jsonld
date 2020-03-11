@@ -39,22 +39,8 @@
             ]
         }
     },
-    "privacyPolicyUrl": {
-        "@id": "pot:privacyPolicyUrl",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Privacy policy URL",
-            "fi-fi": "Tietousojaselosteen URL"
-        },
-        "rdfs:comment": {
-            "en-us": "Privacy policy URL of an app"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:App"
-        ]
+    "nest": {
+        "@id": "pot:nest",
+        "@type": "owl:AnnotationProperty"
     }
 }

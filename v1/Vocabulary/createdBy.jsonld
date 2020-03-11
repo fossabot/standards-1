@@ -44,8 +44,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Identiteetin luoja",
-            "en-us": "Creator"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
             "en-us": "Creator of and identity "

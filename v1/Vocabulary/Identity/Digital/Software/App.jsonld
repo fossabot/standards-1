@@ -44,8 +44,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Kuvaus",
-            "en-us": "Description"
+            "en-us": "Description",
+            "fi-fi": "Kuvaus"
         },
         "rdfs:comment": {
             "en-us": "Description of an app"
@@ -57,16 +57,129 @@
             "pot:App"
         ]
     },
+    "iconUrl": {
+        "@id": "pot:iconUrl",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Icon URL",
+            "fi-fi": "Ikonin URL"
+        },
+        "rdfs:comment": {
+            "en-us": "Icon URL of an app"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:App"
+        ]
+    },
+    "createdBy": {
+        "@id": "pot:createdBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
+        },
+        "rdfs:comment": {
+            "en-us": "Creator of and identity "
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "metadata": {
+        "@id": "pot:metadata",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Metadata"
+        },
+        "rdfs:comment": {
+            "en-us": "Metadata container"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
     "privacyPolicyUrl": {
         "@id": "pot:privacyPolicyUrl",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Tietousojaselosteen URL",
-            "en-us": "Privacy policy URL"
+            "en-us": "Privacy policy URL",
+            "fi-fi": "Tietousojaselosteen URL"
         },
         "rdfs:comment": {
             "en-us": "Privacy policy URL of an app"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:App"
+        ]
+    },
+    "createdAt": {
+        "@id": "pot:createdAt",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
+        },
+        "rdfs:comment": {
+            "en-us": "Time when the data is created"
+        },
+        "pot:valueType": [
+            "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "name": {
+        "@id": "pot:name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Nimi",
+            "en-us": "Name"
+        },
+        "rdfs:comment": {
+            "en-us": "Name of the data product"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Person",
+            "pot:App",
+            "pot:DataProduct"
+        ]
+    },
+    "webpageUrl": {
+        "@id": "pot:webpageUrl",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Webpage URL",
+            "fi-fi": "Websivun URL"
+        },
+        "rdfs:comment": {
+            "en-us": "Webpage URL of an app"
         },
         "pot:valueType": [
             "xsd:string"
@@ -80,8 +193,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Updater",
-            "fi-fi": "Identieetin päivittäjä"
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
         },
         "rdfs:comment": {
             "en-us": "Updater of an identity "
@@ -110,119 +223,6 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
-        ]
-    },
-    "createdBy": {
-        "@id": "pot:createdBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Identiteetin luoja",
-            "en-us": "Creator"
-        },
-        "rdfs:comment": {
-            "en-us": "Creator of and identity "
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "name": {
-        "@id": "pot:name",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Identiteetin nimi",
-            "en-us": "Name"
-        },
-        "rdfs:comment": {
-            "en-us": "Name given to the Identity"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:App",
-            "pot:DataProduct",
-            "pot:Identity",
-            "pot:Person"
-        ]
-    },
-    "createdAt": {
-        "@id": "pot:createdAt",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Luomisaika",
-            "en-us": "Creation time"
-        },
-        "rdfs:comment": {
-            "en-us": "Time when the data is created"
-        },
-        "pot:valueType": [
-            "xsd:dateTime"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "metadata": {
-        "@id": "pot:metadata",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Metadata"
-        },
-        "rdfs:comment": {
-            "en-us": "Metadata container"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "iconUrl": {
-        "@id": "pot:iconUrl",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Icon URL",
-            "fi-fi": "Ikonin URL"
-        },
-        "rdfs:comment": {
-            "en-us": "Icon URL of an app"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:App"
-        ]
-    },
-    "webpageUrl": {
-        "@id": "pot:webpageUrl",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Websivun URL",
-            "en-us": "Webpage URL"
-        },
-        "rdfs:comment": {
-            "en-us": "Webpage URL of an app"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:App"
         ]
     },
     "App": {

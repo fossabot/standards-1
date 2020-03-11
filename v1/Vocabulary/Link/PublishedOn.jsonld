@@ -39,61 +39,6 @@
             ]
         }
     },
-    "productCode": {
-        "@id": "pot:productCode",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Product code",
-            "fi-fi": "Tuotekoodi"
-        },
-        "rdfs:comment": {
-            "en-us": "Unique identifier of a product"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:PublishedOn"
-        ]
-    },
-    "updatedBy": {
-        "@id": "pot:updatedBy",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Updater",
-            "fi-fi": "Identieetin päivittäjä"
-        },
-        "rdfs:comment": {
-            "en-us": "Updater of an identity "
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "data": {
-        "@id": "pot:data",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Data"
-        },
-        "rdfs:comment": {
-            "en-us": "Data container"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
     "updatedAt": {
         "@id": "pot:updatedAt",
         "@type": "owl:DatatypeProperty",
@@ -117,8 +62,8 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Identiteetin luoja",
-            "en-us": "Creator"
+            "en-us": "Creator",
+            "fi-fi": "Identiteetin luoja"
         },
         "rdfs:comment": {
             "en-us": "Creator of and identity "
@@ -129,6 +74,24 @@
         "domain": [
             "pot:Identity",
             "pot:Link"
+        ]
+    },
+    "productCode": {
+        "@id": "pot:productCode",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Product code",
+            "fi-fi": "Tuotekoodi"
+        },
+        "rdfs:comment": {
+            "en-us": "Unique identifier of a product"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:PublishedOn"
         ]
     },
     "metadata": {
@@ -154,14 +117,51 @@
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "fi-fi": "Luomisaika",
-            "en-us": "Creation time"
+            "en-us": "Creation time",
+            "fi-fi": "Luomisaika"
         },
         "rdfs:comment": {
             "en-us": "Time when the data is created"
         },
         "pot:valueType": [
             "xsd:dateTime"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "updatedBy": {
+        "@id": "pot:updatedBy",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Identieetin päivittäjä",
+            "en-us": "Updater"
+        },
+        "rdfs:comment": {
+            "en-us": "Updater of an identity "
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Link"
+        ]
+    },
+    "data": {
+        "@id": "pot:data",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Data"
+        },
+        "rdfs:comment": {
+            "en-us": "Data container"
+        },
+        "pot:valueType": [
+            "xsd:string"
         ],
         "domain": [
             "pot:Identity",
