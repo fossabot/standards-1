@@ -259,7 +259,7 @@
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DRAFT</owl:versionInfo>
         <ns1:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unstable</ns1:term_status>
         <nest rdf:resource="https://standards.lifeengine.io/v1/Vocabulary/metadata"/>
-        <nest rdf:resource="https://standards.oftrust.net/v1/Vocabulary/data"/>
+        <nest rdf:resource="https://standards.lifeengine.io/v1/Vocabulary/data"/>
         <readonly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</readonly>
         <required rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</required>
     </owl:DatatypeProperty>
@@ -278,7 +278,7 @@
         <rdfs:label xml:lang="en-us">Data</rdfs:label>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DRAFT</owl:versionInfo>
         <ns1:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unstable</ns1:term_status>
-        <nest rdf:resource="https://standards.oftrust.net/v1/Vocabulary/data"/>
+        <nest rdf:resource="https://standards.lifeengine.io/v1/Vocabulary/data"/>
         <readonly rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</readonly>
         <required rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</required>
     </owl:DatatypeProperty>
