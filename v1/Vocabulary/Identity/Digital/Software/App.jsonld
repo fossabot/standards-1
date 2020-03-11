@@ -2,7 +2,7 @@
     "@context": {
         "@version": 1.1,
         "pot": {
-            "@id": "https://standards-ontotest.lifeengine.io/Vocabulary/",
+            "@id": "https://standards-ontotest.lifeengine.io/v1/Vocabulary/",
             "@prefix": true
         },
         "rdf": {
@@ -39,22 +39,22 @@
             ]
         }
     },
-    "description": {
-        "@id": "pot:description",
+    "data": {
+        "@id": "pot:data",
         "@type": "owl:DatatypeProperty",
         "subPropertyOf": "pot:topDataProperty",
         "rdfs:label": {
-            "en-us": "Description",
-            "fi-fi": "Kuvaus"
+            "en-us": "Data"
         },
         "rdfs:comment": {
-            "en-us": "Description of an app"
+            "en-us": "Data container"
         },
         "pot:valueType": [
             "xsd:string"
         ],
         "domain": [
-            "pot:App"
+            "pot:Identity",
+            "pot:Link"
         ]
     },
     "iconUrl": {
@@ -67,6 +67,81 @@
         },
         "rdfs:comment": {
             "en-us": "Icon URL of an app"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:App"
+        ]
+    },
+    "privacyPolicyUrl": {
+        "@id": "pot:privacyPolicyUrl",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Privacy policy URL",
+            "fi-fi": "Tietousojaselosteen URL"
+        },
+        "rdfs:comment": {
+            "en-us": "Privacy policy URL of an app"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:App"
+        ]
+    },
+    "webpageUrl": {
+        "@id": "pot:webpageUrl",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Webpage URL",
+            "fi-fi": "Websivun URL"
+        },
+        "rdfs:comment": {
+            "en-us": "Webpage URL of an app"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:App"
+        ]
+    },
+    "name": {
+        "@id": "pot:name",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "fi-fi": "Nimi",
+            "en-us": "Name"
+        },
+        "rdfs:comment": {
+            "en-us": "Name of the data product"
+        },
+        "pot:valueType": [
+            "xsd:string"
+        ],
+        "domain": [
+            "pot:Identity",
+            "pot:Person",
+            "pot:App",
+            "pot:DataProduct"
+        ]
+    },
+    "description": {
+        "@id": "pot:description",
+        "@type": "owl:DatatypeProperty",
+        "subPropertyOf": "pot:topDataProperty",
+        "rdfs:label": {
+            "en-us": "Description",
+            "fi-fi": "Kuvaus"
+        },
+        "rdfs:comment": {
+            "en-us": "Description of an app"
         },
         "pot:valueType": [
             "xsd:string"
@@ -112,24 +187,6 @@
             "pot:Link"
         ]
     },
-    "privacyPolicyUrl": {
-        "@id": "pot:privacyPolicyUrl",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Privacy policy URL",
-            "fi-fi": "Tietousojaselosteen URL"
-        },
-        "rdfs:comment": {
-            "en-us": "Privacy policy URL of an app"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:App"
-        ]
-    },
     "createdAt": {
         "@id": "pot:createdAt",
         "@type": "owl:DatatypeProperty",
@@ -149,45 +206,6 @@
             "pot:Link"
         ]
     },
-    "name": {
-        "@id": "pot:name",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "fi-fi": "Nimi",
-            "en-us": "Name"
-        },
-        "rdfs:comment": {
-            "en-us": "Name of the data product"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Person",
-            "pot:App",
-            "pot:DataProduct"
-        ]
-    },
-    "webpageUrl": {
-        "@id": "pot:webpageUrl",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Webpage URL",
-            "fi-fi": "Websivun URL"
-        },
-        "rdfs:comment": {
-            "en-us": "Webpage URL of an app"
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:App"
-        ]
-    },
     "updatedBy": {
         "@id": "pot:updatedBy",
         "@type": "owl:DatatypeProperty",
@@ -198,24 +216,6 @@
         },
         "rdfs:comment": {
             "en-us": "Updater of an identity "
-        },
-        "pot:valueType": [
-            "xsd:string"
-        ],
-        "domain": [
-            "pot:Identity",
-            "pot:Link"
-        ]
-    },
-    "data": {
-        "@id": "pot:data",
-        "@type": "owl:DatatypeProperty",
-        "subPropertyOf": "pot:topDataProperty",
-        "rdfs:label": {
-            "en-us": "Data"
-        },
-        "rdfs:comment": {
-            "en-us": "Data container"
         },
         "pot:valueType": [
             "xsd:string"
