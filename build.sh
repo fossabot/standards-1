@@ -1,30 +1,39 @@
 #!/bin/sh
 
-set -eo pipefail
-
-readonly STANDARD_VERSION="v1"
+readonly STANDARDS="v1 draft"
 readonly CNAME_ADDRESS="standards.lifeengine.io"
-readonly WORKDIR="/src/${STANDARD_VERSION}"
-readonly ONT_FILE="${WORKDIR}/Ontology/dli.jsonld"
-readonly OUT_FOLDER="/tmp/html"
+readonly WORKDIR="/src"
+readonly TEMP_FOLDER="/tmp/html"
 readonly ARTIFACTS_ROOT="/artifacts"
-readonly ARTIFACTS="${ARTIFACTS_ROOT}/${STANDARD_VERSION}"
 readonly THEME="darkly"
 
+set -exuo pipefail
+
 cd "${WORKDIR}"
-python ../githubify.py "${STANDARD_VERSION}"
 
-mkdir "${OUT_FOLDER}"
-mkdir "${ARTIFACTS}"
+python githubify.py ${STANDARDS}
 
-ontospy gendocs "${ONT_FILE}" -o "${OUT_FOLDER}" --title "Digital Living" --theme="${THEME}" --type 2
+for version in $STANDARDS; do
+  ontology="${WORKDIR}/${version}/Ontology/dli.jsonld"
+  artifacts="${ARTIFACTS_ROOT}/${version}"
+  out_folder="$TEMP_FOLDER/$version"
+
+  mkdir -p "${artifacts}"
+
+  if [ -f "$ontology" ]; then
+    mkdir -p "${out_folder}"
+    ontospy gendocs "${ontology}" -o "${out_folder}" --title "Digital Living" --theme="${THEME}" --type 2
+  fi
+
+  # Copy over the ontologies and contexts to GH pages
+  cp -R "${WORKDIR}/${version}/Context" "${artifacts}/" || true
+  cp -R "${WORKDIR}/${version}/Vocabulary" "${artifacts}/" || true
+  cp -R "${WORKDIR}/${version}/ClassDefinitions" "${artifacts}/" || true
+  cp -R "${WORKDIR}/${version}/DataProducts" "${artifacts}/" || true
+done
 
 # Copy the HTML to the artifacts folder.
-cp -R "${OUT_FOLDER}"/* "${ARTIFACTS}"/
+cp -R "${TEMP_FOLDER}"/* "${ARTIFACTS_ROOT}"/
 
-# Copy over the ontologies and contexts to GH pages
-cp -R "${WORKDIR}/Context" "${ARTIFACTS}"/
-cp -R "${WORKDIR}/Vocabulary" "${ARTIFACTS}"/
-cp -R "${WORKDIR}/ClassDefinitions" "${ARTIFACTS}"/
 echo "${CNAME_ADDRESS}" > "${ARTIFACTS_ROOT}"/CNAME
 echo -e "plugins:\n  - jekyll-redirect-from" > "${ARTIFACTS_ROOT}"/_config.yml

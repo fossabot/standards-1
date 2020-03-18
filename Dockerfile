@@ -1,15 +1,12 @@
-FROM frolvlad/alpine-python3
+FROM python:3.8-alpine3.11
 
 RUN apk add --update --no-cache \
     python3-dev \
     build-base \
     linux-headers
 
-ADD . /src
 WORKDIR /src
-
-RUN mkdir /artifacts
-
+COPY setup.sh /src
 RUN chmod +x *.sh && ./setup.sh
 
 RUN apk del \
@@ -17,3 +14,4 @@ RUN apk del \
     build-base \
     linux-headers
 
+COPY . /src
