@@ -97,7 +97,8 @@
           "attribution": {
             "title": "Source Attribution",
             "type": "array",
-            "example": "[Moscow State environmental monitoring (Государственный экологический мониторинг в Москве)World Air Quality Index Project"],
+            "description": "Required to be shown where this value is used",
+            "example": "Moscow State environmental monitoring (Государственный экологический мониторинг в Москве)World Air Quality Index Project"
           }
         }
       },
