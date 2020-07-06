@@ -1,0 +1,152 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Company Information",
+    "description": "Data Product for company information given by the business id parameter",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/Company/BasicInfo": {
+      "post": {
+        "summary": "/Company Data Product",
+        "description": "Company Information given a certain business id parameter",
+        "operationId": "company_data_product_post",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrhRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrhResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PrhRequest": {
+        "title": "PrhRequest",
+        "required": [
+          "company_id"
+        ],
+        "type": "object",
+        "properties": {
+          "company_id": {
+            "title": "CompanyID",
+            "description": "The ID of the company",
+            "example": "2464491-9"
+          }
+        }
+      },
+      "PrhResponse": {
+        "title": "PrhResponse",
+        "required": [
+          "name",
+          "business_id",
+          "company_form",
+          "registration_date"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name of the company",
+            "type": "string",
+            "example": "Digitalliving"
+          },
+          "business_id": {
+            "title": "ID of the company",
+            "type": "string",
+            "example": "2464491-9"
+          },
+          "company_form": {
+            "title": "Company form of the company",
+            "type": "string",
+            "example": "OY"
+          },
+          "registration_date": {
+            "title": "Registration date of the company",
+            "type": "string",
+            "example": "2012-02-23"
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "HealthResponse": {
+        "title": "HealthResponse",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "boolean"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

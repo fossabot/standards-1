@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rov": {
+      "@id": "https://www.w3.org/TR/vocab-regorg/#",
+      "@prefix": true
+    },
+    "vocab": {
+      "@id": "https://vocabulary.lifeengine.io/Business/#",
+      "@prefix": true
+    },
+    "schema": {
+      "@id": "https://schema.org/LocalBusiness",
+      "@prefix": true
+    },
+    "name": "rov:legalName",
+    "registrationDate": "vocab:RegistrationDate",
+    "business_id": "schema:leiCode",
+    "company_form": "rov:orgType"
+  }
+}

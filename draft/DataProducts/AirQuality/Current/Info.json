@@ -1,0 +1,158 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Air Quality Index",
+    "description": "Data Product for air quality index",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/AirQuality/Current/Info": {
+      "post": {
+        "summary": "AirQuality/Current/Info Data Product",
+        "description": "Current Air Quality index",
+        "operationId": "air_quality_index_Air_Quality_Index_post",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CurrentAirQualityRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CurrentAirQualityResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CurrentAirQualityRequest": {
+        "title": "CurrentAirQualityRequest",
+        "required": [
+          "lat",
+          "lon"
+        ],
+        "type": "object",
+        "properties": {
+          "lat": {
+            "title": "Latitude",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "type": "number",
+            "description": "The latitude coordinate of the desired location",
+            "example": 60.192059
+          },
+          "lon": {
+            "title": "Longitude",
+            "maximum": 180.0,
+            "minimum": -180.0,
+            "type": "number",
+            "description": "The longitude coordinate of the desired location",
+            "example": 24.945831
+          }
+        }
+      },
+      "CurrentAirQualityResponse": {
+        "title": "CurrentAirQualityResponse",
+        "required": [
+          "airQualityIndex",
+          "timestamp",
+          "attribution"
+        ],
+        "type": "object",
+        "properties": {
+          "airQualityIndex": {
+            "title": "Current Air Quality Index",
+            "type": "number",
+            "example": 30
+          },
+          "timestamp": {
+            "title": "Current timestamp in RFC 3339 format",
+            "type": "string",
+            "example": "2020-04-03T13:00:00Z"
+          },
+          "attribution": {
+            "title": "Source Attribution",
+            "type": "array",
+            "example": "[Moscow State environmental monitoring (Государственный экологический мониторинг в Москве)World Air Quality Index Project"],
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "HealthResponse": {
+        "title": "HealthResponse",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "boolean"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
