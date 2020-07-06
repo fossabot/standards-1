@@ -2,13 +2,13 @@
   "openapi": "3.0.2",
   "info": {
     "title": "Company Information",
-    "description": "Data Product for company information given by the business id parameter",
+    "description": "Data Product for a company",
     "version": "1.0.0"
   },
   "paths": {
     "/Company/BasicInfo": {
       "post": {
-        "summary": "/Company Data Product",
+        "summary": "Basic Company Info Data Product",
         "description": "Company Information given a certain business id parameter",
         "operationId": "company_data_product_post",
         "parameters": [],
@@ -50,21 +50,21 @@
   "components": {
     "schemas": {
       "PrhRequest": {
-        "title": "PrhRequest",
+        "title": "CompanyBasicInfoRequest",
         "required": [
           "company_id"
         ],
         "type": "object",
         "properties": {
           "company_id": {
-            "title": "CompanyID",
+            "title": "Company ID",
             "description": "The ID of the company",
             "example": "2464491-9"
           }
         }
       },
       "PrhResponse": {
-        "title": "PrhResponse",
+        "title": "CompanyBasicInfoResponse",
         "required": [
           "name",
           "business_id",
@@ -76,7 +76,7 @@
           "name": {
             "title": "Name of the company",
             "type": "string",
-            "example": "Digitalliving"
+            "example": "Digital Living International Oy"
           },
           "business_id": {
             "title": "ID of the company",
