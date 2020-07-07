@@ -49,7 +49,7 @@
   },
   "components": {
     "schemas": {
-      "PrhRequest": {
+      "BasicCompanyInfoRequest": {
         "title": "CompanyBasicInfoRequest",
         "required": [
           "company_id"
@@ -63,7 +63,7 @@
           }
         }
       },
-      "PrhResponse": {
+      "BasicCompanyInfoResponse": {
         "title": "CompanyBasicInfoResponse",
         "required": [
           "name",
