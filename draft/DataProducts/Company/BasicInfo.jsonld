@@ -2,7 +2,7 @@
   "@context": {
     "@version": 1.1,
     "rov": {
-      "@id": "https://www.w3.org/TR/vocab-regorg/#",
+      "@id": "https://www.w3.org/TR/vocab-regorg/#ref_rov_",
       "@prefix": true
     },
     "vocab": {
@@ -13,9 +13,9 @@
       "@id": "https://schema.org/",
       "@prefix": true
     },
-    "name": "rov:ref_rov_legalname",
+    "name": "rov:legalname",
     "registration_date": "vocab:RegistrationDate",
     "business_id": "schema:leiCode",
-    "company_form": "rov:ref_rov_orgType"
+    "company_form": "rov:orgType"
   }
 }

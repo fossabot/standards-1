@@ -9,7 +9,7 @@
     "/Company/BasicInfo": {
       "post": {
         "summary": "Basic Company Info Data Product",
-        "description": "Company Information given a certain business id parameter",
+        "description": "Data Product for a company",
         "operationId": "company_data_product_post",
         "parameters": [],
         "requestBody": {
