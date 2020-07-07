@@ -16,7 +16,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PrhRequest"
+                "$ref": "#/components/schemas/BasicCompanyInfoRequest"
               }
             }
           },
@@ -28,7 +28,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrhResponse"
+                  "$ref": "#/components/schemas/BasicCompanyInfoResponse"
                 }
               }
             }
