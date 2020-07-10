@@ -56,7 +56,7 @@
         ],
         "type": "object",
         "properties": {
-          "company_id": {
+          "businessId": {
             "title": "Company ID",
             "description": "The ID of the company",
             "example": "2464491-9"
