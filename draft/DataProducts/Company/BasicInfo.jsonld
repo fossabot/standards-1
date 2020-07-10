@@ -14,8 +14,8 @@
       "@prefix": true
     },
     "name": "rov:legalname",
-    "registration_date": "vocab:RegistrationDate",
-    "business_id": "schema:identifier",
-    "company_form": "rov:orgType"
+    "registrationDate": "vocab:RegistrationDate",
+    "businessId": "schema:identifier",
+    "companyForm": "rov:orgType"
   }
 }
