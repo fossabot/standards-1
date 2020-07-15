@@ -37,6 +37,7 @@ cp -R "${TEMP_FOLDER}"/* "${ARTIFACTS_ROOT}"/
 echo "${CNAME_ADDRESS}" > "${ARTIFACTS_ROOT}"/CNAME
 
 # POSIX compliant heredoc
+redirect=""
 nl='
 '
 while IFS="$nl" read -r line; do
