@@ -3,7 +3,7 @@ services:
 
 before_install:
   - docker build -t doc-build .
-  - pip install -U pre-commit
+  - pip install --user -U pre-commit
 
 install: true
 
