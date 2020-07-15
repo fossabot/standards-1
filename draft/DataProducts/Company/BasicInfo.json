@@ -1,17 +1,34 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Company Information",
-    "description": "Data Product for a company",
+    "title": "Productizer",
+    "description": "Productizer for the PRH API",
     "version": "1.0.0"
   },
   "paths": {
-    "/Company/BasicInfo": {
+    "/health": {
+      "get": {
+        "summary": "Healthcheck",
+        "operationId": "healthcheck_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BusinessData/PRH": {
       "post": {
-        "summary": "Basic Company Info Data Product",
-        "description": "Data Product for a company",
-        "operationId": "company_data_product_post",
-        "parameters": [],
+        "summary": "BusinessData/PRH Data Product",
+        "description": "Info about company",
+        "operationId": "prh_response_BusinessData_PRH_post",
         "requestBody": {
           "content": {
             "application/json": {
@@ -26,7 +43,7 @@
           "200": {
             "description": "Successful Response",
             "content": {
-              "application/json": {
+                "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BasicCompanyInfoResponse"
                 }
@@ -35,7 +52,7 @@
           },
           "422": {
             "description": "Validation Error",
-            "content": {
+              "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
@@ -50,33 +67,34 @@
   "components": {
     "schemas": {
       "BasicCompanyInfoRequest": {
-        "title": "CompanyBasicInfoRequest",
+        "title": "BasicCompanyInfoRequest",
         "required": [
-          "businessId"
+        "businessId"
         ],
         "type": "object",
         "properties": {
           "businessId": {
-            "title": "Company ID",
+            "title": "CompanyID",
+            "type": "string",
             "description": "The ID of the company",
             "example": "2464491-9"
           }
         }
       },
       "BasicCompanyInfoResponse": {
-        "title": "CompanyBasicInfoResponse",
+        "title": "BasicCompanyInfoResponse",
         "required": [
-          "name",
-          "businessId",
-          "companyForm",
-          "registrationDate"
+        "name",
+        "businessId",
+        "companyForm",
+        "registrationDate"
         ],
         "type": "object",
         "properties": {
           "name": {
-            "title": "Name of the company",
+            "title": "name of the company",
             "type": "string",
-            "example": "Digital Living International Oy"
+            "example": "Digitalliving"
           },
           "businessId": {
             "title": "ID of the company",
@@ -84,12 +102,12 @@
             "example": "2464491-9"
           },
           "companyForm": {
-            "title": "Company form of the company",
+            "title": "The company form of the company",
             "type": "string",
-            "example": "OY"
+            "example": "LLC"
           },
           "registrationDate": {
-            "title": "Registration date of the company",
+            "title": "Date of registration for the company",
             "type": "string",
             "example": "2012-02-23"
           }
@@ -111,7 +129,7 @@
       "HealthResponse": {
         "title": "HealthResponse",
         "required": [
-          "status"
+        "status"
         ],
         "type": "object",
         "properties": {
@@ -124,9 +142,9 @@
       "ValidationError": {
         "title": "ValidationError",
         "required": [
-          "loc",
-          "msg",
-          "type"
+        "loc",
+        "msg",
+        "type"
         ],
         "type": "object",
         "properties": {

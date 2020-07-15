@@ -1,17 +1,47 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Air Quality Index",
-    "description": "Data Product for air quality index",
+    "title": "Productizer",
+    "description": "Productizer for the AirQualityIndex API",
     "version": "1.0.0"
   },
   "paths": {
-    "/AirQuality/Current/Info": {
+    "/health": {
+      "get": {
+        "summary": "Healthcheck",
+        "operationId": "healthcheck_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AirQuality/Current": {
       "post": {
-        "summary": "AirQuality/Current/Info Data Product",
-        "description": "Current Air Quality index",
-        "operationId": "air_quality_index_Air_Quality_Index_post",
-        "parameters": [],
+        "summary": "AirQuality/Current/Air Quality Data Product",
+        "description": "Current air quality",
+        "operationId": "air_quality_current_AirQuality_Current_post",
+        "parameters": [
+        {
+          "description": "HMAC-RSA256 signature for the request using Product Gateway's public key",
+          "required": false,
+          "schema": {
+            "title": "Request signature",
+            "type": "string",
+            "description": "HMAC-RSA256 signature for the request using Product Gateway's public key"
+          },
+          "name": "x-signature",
+          "in": "header"
+        }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -52,23 +82,23 @@
       "CurrentAirQualityRequest": {
         "title": "CurrentAirQualityRequest",
         "required": [
-          "lat",
-          "lon"
+        "lat",
+        "lon"
         ],
         "type": "object",
         "properties": {
           "lat": {
             "title": "Latitude",
-            "maximum": 90.0,
-            "minimum": -90.0,
+            "maximum": 90,
+            "minimum": -90,
             "type": "number",
             "description": "The latitude coordinate of the desired location",
             "example": 60.192059
           },
           "lon": {
             "title": "Longitude",
-            "maximum": 180.0,
-            "minimum": -180.0,
+            "maximum": 180,
+            "minimum": -180,
             "type": "number",
             "description": "The longitude coordinate of the desired location",
             "example": 24.945831
@@ -78,27 +108,34 @@
       "CurrentAirQualityResponse": {
         "title": "CurrentAirQualityResponse",
         "required": [
-          "airQualityIndex",
-          "timestamp",
-          "attribution"
+        "airQualityIndex",
+        "timestamp",
+        "attribution"
         ],
         "type": "object",
         "properties": {
           "airQualityIndex": {
-            "title": "Current Air Quality Index",
-            "type": "number",
+            "title": "Air Quality Index",
+            "minimum": 0,
+            "type": "integer",
+            "description": "Current air-quality index.\n        Ranges:\n        0-50 Good;\n        51-100 Moderate;\n        101-150 Unhealthy For Sensitive Groups;\n        151-200 Unhealthy;\n        201-300 Very Unhealthy;\n        301+ Hazardous",
             "example": 30
           },
           "timestamp": {
-            "title": "Current timestamp in RFC 3339 format",
+            "title": "Timestamp",
             "type": "string",
+            "description": "Current timestamp in RFC 3339 format",
             "example": "2020-04-03T13:00:00Z"
           },
           "attribution": {
             "title": "Source Attribution",
             "type": "array",
-            "description": "Required to be shown where this value is used",
-            "example": "Moscow State environmental monitoring (Государственный экологический мониторинг в Москве)World Air Quality Index Project"
+            "items": {},
+            "description": "List of text to show required credits to data sources",
+            "example": [
+            "Moscow State environmental monitoring (Государственный экологический мониторинг в Москве)",
+            "World Air Quality Index Project"
+            ]
           }
         }
       },
@@ -118,7 +155,7 @@
       "HealthResponse": {
         "title": "HealthResponse",
         "required": [
-          "status"
+        "status"
         ],
         "type": "object",
         "properties": {
@@ -131,9 +168,9 @@
       "ValidationError": {
         "title": "ValidationError",
         "required": [
-          "loc",
-          "msg",
-          "type"
+        "loc",
+        "msg",
+        "type"
         ],
         "type": "object",
         "properties": {
