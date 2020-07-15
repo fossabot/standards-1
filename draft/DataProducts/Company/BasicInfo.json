@@ -24,11 +24,11 @@
         }
       }
     },
-    "/BusinessData/PRH": {
+    "/Company/BasicInfo": {
       "post": {
-        "summary": "BusinessData/PRH Data Product",
+        "summary": "Company/BasicInfo Data Product",
         "description": "Info about company",
-        "operationId": "prh_response_BusinessData_PRH_post",
+        "operationId": "prh_response_Company_BasicInfo_post",
         "requestBody": {
           "content": {
             "application/json": {
@@ -43,7 +43,7 @@
           "200": {
             "description": "Successful Response",
             "content": {
-                "application/json": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BasicCompanyInfoResponse"
                 }
@@ -52,7 +52,7 @@
           },
           "422": {
             "description": "Validation Error",
-              "content": {
+            "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
@@ -69,7 +69,7 @@
       "BasicCompanyInfoRequest": {
         "title": "BasicCompanyInfoRequest",
         "required": [
-        "businessId"
+          "businessId"
         ],
         "type": "object",
         "properties": {
@@ -84,10 +84,10 @@
       "BasicCompanyInfoResponse": {
         "title": "BasicCompanyInfoResponse",
         "required": [
-        "name",
-        "businessId",
-        "companyForm",
-        "registrationDate"
+          "name",
+          "businessId",
+          "companyForm",
+          "registrationDate"
         ],
         "type": "object",
         "properties": {
@@ -129,7 +129,7 @@
       "HealthResponse": {
         "title": "HealthResponse",
         "required": [
-        "status"
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -142,9 +142,9 @@
       "ValidationError": {
         "title": "ValidationError",
         "required": [
-        "loc",
-        "msg",
-        "type"
+          "loc",
+          "msg",
+          "type"
         ],
         "type": "object",
         "properties": {

@@ -30,17 +30,17 @@
         "description": "Current air quality",
         "operationId": "air_quality_current_AirQuality_Current_post",
         "parameters": [
-        {
-          "description": "HMAC-RSA256 signature for the request using Product Gateway's public key",
-          "required": false,
-          "schema": {
-            "title": "Request signature",
-            "type": "string",
-            "description": "HMAC-RSA256 signature for the request using Product Gateway's public key"
-          },
-          "name": "x-signature",
-          "in": "header"
-        }
+          {
+            "description": "HMAC-RSA256 signature for the request using Product Gateway's public key",
+            "required": false,
+            "schema": {
+              "title": "Request signature",
+              "type": "string",
+              "description": "HMAC-RSA256 signature for the request using Product Gateway's public key"
+            },
+            "name": "x-signature",
+            "in": "header"
+          }
         ],
         "requestBody": {
           "content": {
@@ -82,8 +82,8 @@
       "CurrentAirQualityRequest": {
         "title": "CurrentAirQualityRequest",
         "required": [
-        "lat",
-        "lon"
+          "lat",
+          "lon"
         ],
         "type": "object",
         "properties": {
@@ -155,7 +155,7 @@
       "HealthResponse": {
         "title": "HealthResponse",
         "required": [
-        "status"
+          "status"
         ],
         "type": "object",
         "properties": {
@@ -168,9 +168,9 @@
       "ValidationError": {
         "title": "ValidationError",
         "required": [
-        "loc",
-        "msg",
-        "type"
+          "loc",
+          "msg",
+          "type"
         ],
         "type": "object",
         "properties": {
