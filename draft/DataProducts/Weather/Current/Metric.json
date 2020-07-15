@@ -51,10 +51,7 @@
     "schemas": {
       "CurrentWeatherMetricRequest": {
         "title": "CurrentWeatherMetricRequest",
-        "required": [
-          "lat",
-          "lon"
-        ],
+        "required": ["lat", "lon"],
         "type": "object",
         "properties": {
           "lat": {
@@ -138,9 +135,7 @@
       },
       "HealthResponse": {
         "title": "HealthResponse",
-        "required": [
-          "status"
-        ],
+        "required": ["status"],
         "type": "object",
         "properties": {
           "status": {
@@ -151,11 +146,7 @@
       },
       "ValidationError": {
         "title": "ValidationError",
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
+        "required": ["loc", "msg", "type"],
         "type": "object",
         "properties": {
           "loc": {

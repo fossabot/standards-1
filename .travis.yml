@@ -3,10 +3,12 @@ services:
 
 before_install:
   - docker build -t doc-build .
+  - pip install -U pre-commit
 
 install: true
 
 script:
+  - pre-commit run --all-files || exit 1
   - ./travis-validation.sh
   - ./docker-run.sh
 

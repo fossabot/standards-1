@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -exu
 
-FOUND_FILES=`find . -name "*.sh" -not -executable`
+FOUND_FILES=$(find . -name "*.sh" -not -executable)
 if [ -z "$FOUND_FILES" ]; then
     echo "All files have -x applied."
 else
