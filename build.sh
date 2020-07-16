@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 readonly STANDARDS="v1 draft"
 readonly CNAME_ADDRESS="standards.lifeengine.io"
@@ -7,11 +7,11 @@ readonly TEMP_FOLDER="/tmp/html"
 readonly ARTIFACTS_ROOT="/artifacts"
 readonly THEME="darkly"
 
-set -exuo pipefail
+set -exu
 
 cd "${WORKDIR}"
 
-python githubify.py ${STANDARDS}
+python githubify.py "${STANDARDS}"
 
 for version in $STANDARDS; do
   ontology="${WORKDIR}/${version}/Ontology/dli.jsonld"
@@ -34,6 +34,17 @@ done
 
 # Copy the HTML to the artifacts folder.
 cp -R "${TEMP_FOLDER}"/* "${ARTIFACTS_ROOT}"/
-
 echo "${CNAME_ADDRESS}" > "${ARTIFACTS_ROOT}"/CNAME
-echo -e "plugins:\n  - jekyll-redirect-from" > "${ARTIFACTS_ROOT}"/_config.yml
+
+# POSIX compliant heredoc
+redirect=""
+nl='
+'
+while IFS="$nl" read -r line; do
+    redirect="$redirect$line$nl"
+done <<\END
+plugins:
+  - jekyll-redirect-from
+END
+
+echo "$redirect" > "${ARTIFACTS_ROOT}"/_config.yml

@@ -1,12 +1,19 @@
+language: python
+python:
+  - 3.8
+
 services:
   - docker
 
 before_install:
+  - nvm install
+  - pip install pre-commit
   - docker build -t doc-build .
 
 install: true
 
 script:
+  - pre-commit run --all-files || exit 1
   - ./travis-validation.sh
   - ./docker-run.sh
 
