@@ -1,16 +1,16 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Productizer",
-    "description": "Productizer for the PRH API",
+    "title": " Basic Company Info",
+    "description": "Data Product for basic company info",
     "version": "1.0.0"
   },
   "paths": {
     "/Company/BasicInfo": {
       "post": {
         "summary": "Company/BasicInfo Data Product",
-        "description": "Info about company",
-        "operationId": "prh_response_Company_BasicInfo_post",
+        "description": "Information about the company",
+        "operationId": "company_basicinfo_post",
         "requestBody": {
           "content": {
             "application/json": {
@@ -50,10 +50,10 @@
     "schemas": {
       "BasicCompanyInfoRequest": {
         "title": "BasicCompanyInfoRequest",
-        "required": ["businessId"],
+        "required": ["companyId"],
         "type": "object",
         "properties": {
-          "businessId": {
+          "companyId": {
             "title": "CompanyID",
             "type": "string",
             "description": "The ID of the company",
@@ -63,15 +63,15 @@
       },
       "BasicCompanyInfoResponse": {
         "title": "BasicCompanyInfoResponse",
-        "required": ["name", "businessId", "companyForm", "registrationDate"],
+        "required": ["name", "companyId", "companyForm", "registrationDate"],
         "type": "object",
         "properties": {
           "name": {
             "title": "name of the company",
             "type": "string",
-            "example": "Digitalliving"
+            "example": "Digital Living International Oy"
           },
-          "businessId": {
+          "companyId": {
             "title": "ID of the company",
             "type": "string",
             "example": "2464491-9"

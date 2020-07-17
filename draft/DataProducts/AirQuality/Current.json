@@ -1,16 +1,16 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Productizer",
-    "description": "Productizer for the AirQualityIndex API",
+    "title": " AirQualityIndex",
+    "description": "Data Product for current air quality index",
     "version": "1.0.0"
   },
   "paths": {
     "/AirQuality/Current": {
       "post": {
-        "summary": "AirQuality/Current/Air Quality Data Product",
+        "summary": "AirQuality/Current Data Product",
         "description": "Current air quality",
-        "operationId": "air_quality_current_AirQuality_Current_post",
+        "operationId": "air_quality_current_post",
         "parameters": [
           {
             "description": "HMAC-RSA256 signature for the request using Product Gateway's public key",
