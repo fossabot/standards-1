@@ -10,8 +10,20 @@
       "post": {
         "summary": "Weather/Current/Metric Data Product",
         "description": "Current weather in metric units",
-        "operationId": "weather_current_metric_Weather_Current_Metric_post",
-        "parameters": [],
+        "operationId": "requestCurrentWeatherMetricData",
+        "parameters": [
+          {
+            "description": "HMAC-RSA256 signature for the request using Product Gateway's public key",
+            "required": false,
+            "schema": {
+              "title": "Request signature",
+              "type": "string",
+              "description": "HMAC-RSA256 signature for the request using Product Gateway's public key"
+            },
+            "name": "x-signature",
+            "in": "header"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -56,16 +68,16 @@
         "properties": {
           "lat": {
             "title": "Latitude",
-            "maximum": 90.0,
-            "minimum": -90.0,
+            "maximum": 90,
+            "minimum": -90,
             "type": "number",
             "description": "The latitude coordinate of the desired location",
             "example": 60.192059
           },
           "lon": {
             "title": "Longitude",
-            "maximum": 180.0,
-            "minimum": -180.0,
+            "maximum": 180,
+            "minimum": -180,
             "type": "number",
             "description": "The longitude coordinate of the desired location",
             "example": 24.945831
@@ -107,16 +119,16 @@
           },
           "windSpeed": {
             "title": "Current wind speed in m/s",
-            "minimum": 0.0,
+            "minimum": 0,
             "type": "number",
             "example": 2.1
           },
           "windDirection": {
             "title": "Current wind direction in meteorological wind direction degrees",
-            "maximum": 360.0,
-            "minimum": 0.0,
+            "maximum": 360,
+            "minimum": 0,
             "type": "number",
-            "example": 220.0
+            "example": 220
           }
         }
       },
@@ -130,17 +142,6 @@
             "items": {
               "$ref": "#/components/schemas/ValidationError"
             }
-          }
-        }
-      },
-      "HealthResponse": {
-        "title": "HealthResponse",
-        "required": ["status"],
-        "type": "object",
-        "properties": {
-          "status": {
-            "title": "Status",
-            "type": "boolean"
           }
         }
       },

@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": " AirQualityIndex",
+    "title": "Air Quality Index",
     "description": "Data Product for current air quality index",
     "version": "1.0.0"
   },
@@ -10,7 +10,7 @@
       "post": {
         "summary": "AirQuality/Current Data Product",
         "description": "Current air quality",
-        "operationId": "air_quality_current_post",
+        "operationId": "requestAirQualityIndexData",
         "parameters": [
           {
             "description": "HMAC-RSA256 signature for the request using Product Gateway's public key",

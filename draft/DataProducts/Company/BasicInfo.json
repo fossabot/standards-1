@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": " Basic Company Info",
+    "title": "Basic Company Info",
     "description": "Data Product for basic company info",
     "version": "1.0.0"
   },
@@ -10,7 +10,7 @@
       "post": {
         "summary": "Company/BasicInfo Data Product",
         "description": "Information about the company",
-        "operationId": "company_basicinfo_post",
+        "operationId": "requestCompanyBasicInfoData",
         "requestBody": {
           "content": {
             "application/json": {
@@ -54,7 +54,7 @@
         "type": "object",
         "properties": {
           "companyId": {
-            "title": "CompanyID",
+            "title": "Company Id",
             "type": "string",
             "description": "The ID of the company",
             "example": "2464491-9"
@@ -67,7 +67,7 @@
         "type": "object",
         "properties": {
           "name": {
-            "title": "name of the company",
+            "title": "Name of the company",
             "type": "string",
             "example": "Digital Living International Oy"
           },
