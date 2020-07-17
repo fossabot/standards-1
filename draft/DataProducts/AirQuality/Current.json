@@ -93,7 +93,7 @@
             "title": "Air Quality Index",
             "minimum": 0,
             "type": "integer",
-            "description": "Current air-quality index.\n        Ranges:\n        0-50 Good;\n        51-100 Moderate;\n        101-150 Unhealthy For Sensitive Groups;\n        151-200 Unhealthy;\n        201-300 Very Unhealthy;\n        301+ Hazardous",
+            "description": "Current air quality index.\n        Ranges:\n        0-50 Good;\n        51-100 Moderate;\n        101-150 Unhealthy For Sensitive Groups;\n        151-200 Unhealthy;\n        201-300 Very Unhealthy;\n        301+ Hazardous",
             "example": 30
           },
           "timestamp": {
