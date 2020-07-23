@@ -6,14 +6,15 @@
       "@prefix": true
     },
     "airquality": {
-      "@id": "https://www.environment.nsw.gov.au/topics/air/understanding-air-quality-data/glossary-of-air-quality-terms#aqi",
+      "@id": "https://www.environment.nsw.gov.au/topics/air/understanding-air-quality-data/glossary-of-air-quality-terms#",
       "@prefix": true
     },
     "legal": {
-      "@id": "https://vocabulary.lifeengine.io/Legislation/#"
-    }
+      "@id": "https://vocabulary.lifeengine.io/Legislation/#",
+      "@prefix": true
+    },
     "timestamp": "saref:Time",
-    "airQualityIndex": "airquality:Air Quality Index (AQI)",
+    "airQualityIndex": "airquality:aqi",
     "attribution": "legal:Attribution"
   }
 }
