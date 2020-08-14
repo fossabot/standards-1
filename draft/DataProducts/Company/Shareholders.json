@@ -2,21 +2,21 @@
   "openapi": "3.0.2",
   "info": {
     "title": "Basic Shareholders Info",
-    "description": "Data Product for basic shareholders info",
+    "description": "Data Product for basic Shareholders info",
     "version": "1.0.0"
   },
   "paths": {
     "/Company/Shareholders": {
       "post": {
         "summary": "Company/Shareholders Data Product",
-        "description": "Information about the company shareholders",
-        "operationId": "requestCompanyShareholdersData",
+        "description": "Information about shareholders of the company",
+        "operationId": "requestCompanyShareHoldersData",
         "requestBody": {
           "content": {
             "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ShareholdersInfoRequest"
-            }
+              "schema": {
+                "$ref": "#/components/schemas/ShareholdersInfoRequest"
+              }
             }
           },
           "required": true
@@ -61,66 +61,49 @@
           }
         }
       },
-      "OwnerShips": {
-        "title": "OwnerShips",
-        "required": [
-          "seriesName",
-          "quantity"
-        ],
-        "type": "object",
-        "properties": {
-          "seriesName": {
-            "title": "Series Name",
-            "type": "string",
-            "description": "Name of the series",
-            "example": "A"
-          },
-          "quantity": {
-            "title": "Quantity of Shares",
-            "type": "integer",
-            "description": "Amount of shares held by the person",
-            "example": 100
-          }
-        }
-      },
       "Owners": {
         "title": "Owners",
-        "required": [
-          "name",
-          "id",
-          "ownerShips"
-        ],
+        "required": ["name", "ownerShips"],
         "type": "object",
         "properties": {
           "name": {
-          "title": "Name",
+            "title": "Name of the shareholder",
             "type": "string",
             "description": "Name of the shareholder",
-            "example": "Matti Meikäläinen | <company_name>"
-          },
-          "id": {
-            "title": "Id",
-            "type": "string",
-            "description": "Universally unique identifier",
-            "example": "uuid"
+            "example": "Matti Meikäläinen | Oy Company Ltd"
           },
           "ownerShips": {
             "title": "Ownerships",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/OwnerShips"
+              "$ref": "#/components/schemas/Ownerships"
             },
             "description": "List of ownerships"
           }
         }
       },
+      "Ownerships": {
+        "title": "Ownerships",
+        "required": ["seriesName", "quantity"],
+        "type": "object",
+        "properties": {
+          "seriesName": {
+            "title": "Series name",
+            "type": "string",
+            "description": "Name of the share series",
+            "example": "A"
+          },
+          "quantity": {
+            "title": "Number of shares",
+            "type": "integer",
+            "description": "Number of shares held by the owner",
+            "example": 100
+          }
+        }
+      },
       "ShareSeries": {
         "title": "ShareSeries",
-        "required": [
-          "seriesName",
-          "votesPerShare",
-          "totalShares"
-        ],
+        "required": ["seriesName", "votesPerShare", "totalShares"],
         "type": "object",
         "properties": {
           "seriesName": {
@@ -130,13 +113,13 @@
             "example": "A"
           },
           "votesPerShare": {
-            "title": "Votes Per Share",
+            "title": "Votes per share",
             "type": "integer",
             "description": "Number of votes per share in the share series",
             "example": 1
           },
           "totalShares": {
-            "title": "Total Shares",
+            "title": "Total shares",
             "type": "integer",
             "description": "Total number of shares in the share series",
             "example": 1000
@@ -145,9 +128,7 @@
       },
       "ShareholdersInfoRequest": {
         "title": "ShareholdersInfoRequest",
-        "required": [
-          "companyId"
-        ],
+        "required": ["companyId"],
         "type": "object",
         "properties": {
           "companyId": {
@@ -160,14 +141,11 @@
       },
       "ShareholdersInfoResponse": {
         "title": "ShareholdersInfoResponse",
-        "required": [
-          "shareSeries",
-          "owners"
-        ],
+        "required": ["shareSeries", "owners"],
         "type": "object",
         "properties": {
           "shareSeries": {
-            "title": "Shareseries",
+            "title": "Share series",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ShareSeries"
@@ -184,11 +162,7 @@
       },
       "ValidationError": {
         "title": "ValidationError",
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
+        "required": ["loc", "msg", "type"],
         "type": "object",
         "properties": {
           "loc": {
