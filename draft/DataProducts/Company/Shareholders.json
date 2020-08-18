@@ -9,7 +9,7 @@
     "/Company/Shareholders": {
       "post": {
         "summary": "Company/Shareholders Data Product",
-        "description": "Information about shareholders of the company",
+        "description": "Information about the shareholders of the company",
         "operationId": "requestCompanyShareHoldersData",
         "requestBody": {
           "content": {
@@ -61,29 +61,8 @@
           }
         }
       },
-      "Owners": {
-        "title": "Owners",
-        "required": ["name", "ownerShips"],
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name of the shareholder",
-            "type": "string",
-            "description": "Name of the shareholder",
-            "example": "Matti Meikäläinen | Oy Company Ltd"
-          },
-          "ownerShips": {
-            "title": "Ownerships",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Ownerships"
-            },
-            "description": "List of ownerships"
-          }
-        }
-      },
-      "Ownerships": {
-        "title": "Ownerships",
+      "OwnedShares": {
+        "title": "OwnedShares",
         "required": ["seriesName", "quantity"],
         "type": "object",
         "properties": {
@@ -98,6 +77,27 @@
             "type": "integer",
             "description": "Number of shares held by the owner",
             "example": 100
+          }
+        }
+      },
+      "Owners": {
+        "title": "Owners",
+        "required": ["name", "shares"],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name of the shareholder",
+            "type": "string",
+            "description": "Name of the shareholder",
+            "example": "Matti Meikäläinen | Oy Company Ltd"
+          },
+          "shares": {
+            "title": "Owned Shares",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OwnedShares"
+            },
+            "description": "List of owned shares"
           }
         }
       },
@@ -134,7 +134,7 @@
           "companyId": {
             "title": "Company Id",
             "type": "string",
-            "description": "The ID of the company",
+            "description": "The ID of the company, only supports Finnish business ID's",
             "example": "2464491-9"
           }
         }
