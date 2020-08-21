@@ -78,7 +78,7 @@
             "items": {
               "$ref": "#/components/schemas/Ownerships"
             },
-            "description": "List of owned shares"
+            "description": "List of Ownerships"
           }
         }
       },
