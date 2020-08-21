@@ -61,43 +61,43 @@
           }
         }
       },
-      "OwnedShares": {
-        "title": "OwnedShares",
+      "Owners": {
+        "title": "Owners",
+        "required": ["name", "ownerships"],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name of the Shareholder",
+            "type": "string",
+            "description": "Name of the shareholder",
+            "example": "Matti Meikäläinen | Oy Company Ltd"
+          },
+          "ownerships": {
+            "title": "Owned Shares",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ownerships"
+            },
+            "description": "List of owned shares"
+          }
+        }
+      },
+      "Ownerships": {
+        "title": "Ownerships",
         "required": ["seriesName", "quantity"],
         "type": "object",
         "properties": {
           "seriesName": {
-            "title": "Series name",
+            "title": "Series Name",
             "type": "string",
             "description": "Name of the share series",
             "example": "A"
           },
           "quantity": {
-            "title": "Number of shares",
+            "title": "Number of Shares",
             "type": "integer",
             "description": "Number of shares held by the owner",
             "example": 100
-          }
-        }
-      },
-      "Owners": {
-        "title": "Owners",
-        "required": ["name", "shares"],
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name of the shareholder",
-            "type": "string",
-            "description": "Name of the shareholder",
-            "example": "Matti Meikäläinen | Oy Company Ltd"
-          },
-          "shares": {
-            "title": "Owned Shares",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OwnedShares"
-            },
-            "description": "List of owned shares"
           }
         }
       },
@@ -113,13 +113,13 @@
             "example": "A"
           },
           "votesPerShare": {
-            "title": "Votes per share",
+            "title": "Votes Per Share",
             "type": "integer",
             "description": "Number of votes per share in the share series",
             "example": 1
           },
           "totalShares": {
-            "title": "Total shares",
+            "title": "Total Shares",
             "type": "integer",
             "description": "Total number of shares in the share series",
             "example": 1000
