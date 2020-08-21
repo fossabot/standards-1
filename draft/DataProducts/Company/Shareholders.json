@@ -73,7 +73,7 @@
             "example": "Matti Meikäläinen | Oy Company Ltd"
           },
           "ownerships": {
-            "title": "Owned Shares",
+            "title": "Ownerships",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Ownerships"
