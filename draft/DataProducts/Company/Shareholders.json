@@ -134,7 +134,7 @@
           "companyId": {
             "title": "Company Id",
             "type": "string",
-            "description": "The ID of the company, only supports Finnish business ID's",
+            "description": "The ID of the company, only supports Finnish business IDs",
             "example": "2464491-9"
           }
         }
