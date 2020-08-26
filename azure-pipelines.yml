@@ -1,0 +1,5 @@
+trigger:
+- master
+
+steps:
+  - script: "echo New standards available"
