@@ -12,8 +12,7 @@ cache:
 
 before_install:
   - nvm install
-  - pip install openapi-to-fastapi
-  - pip install pre-commit
+  - pip install pre-commit openapi-to-fastapi
   - docker build -t doc-build .
 
 install: true
