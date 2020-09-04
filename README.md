@@ -1,4 +1,6 @@
 # Digital Living Standards repository
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdigitalliving%2Fstandards.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdigitalliving%2Fstandards?ref=badge_shield)
+
 
 This repository contains everything we need to standardize the Digital Living LifeEngine
 APIs.
@@ -35,3 +37,7 @@ unnecessary work from everyone:
    or propose a change to an existing standard that could break backwards compatibility,
    you should submit the changes in the `draft` version. Afterwards we can figure out
    which release version they can go in.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdigitalliving%2Fstandards.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdigitalliving%2Fstandards?ref=badge_large)
